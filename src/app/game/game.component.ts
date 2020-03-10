@@ -611,6 +611,7 @@ export class GameComponent implements OnInit {
   }
 
   leaveGame() {
+    this.socket.close()
     this.router.navigate(["/menu"]);
   }
 }
