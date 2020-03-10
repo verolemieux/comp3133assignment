@@ -1,0 +1,53 @@
+button {
+    margin: 20px;
+}
+
+.table {
+    width: 97%;
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+}
+
+.dashboard {
+    margin: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+}
+
+::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.4em 0px !important;}
+::ng-deep .mat-form-field-label-wrapper { top: -1.5em; }
+
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translateY(-1.1em) scale(.75);
+    width: 133.33333%;
+}
+
+::ng-deep .mat-form-field-empty.mat-form-field-label {
+    color: white;
+    caret-color: white;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: white;
+}
+
+::ng-deep input.mat-input-element {
+    color: white;
+    caret-color: white !important;
+}
+
+.mat-raised-button.mat-success {
+    color: green
+}
+
+h3 {
+    font-family: 'Coda Caption', sans-serif;
+    font-size: 25px;
+}

@@ -1,0 +1,44 @@
+<span class="header">
+    <button color="primary" id="leaveGame" mat-raised-button (click)="leaveGame()">Leave Game</button>
+    <mat-toolbar class="time-bar">
+        <p>TIMER:</p>
+        <p class="time">{{time}}</p>
+        <p>{{message}}</p>
+    </mat-toolbar>
+    <button class="hidden"></button>
+</span>
+<mat-grid-list cols="5" rowHeight="580px">
+    <mat-grid-tile [colspan]="4" [rowspan]="1">
+        <div class="game-tile">
+            <mat-toolbar class="game-toolbar">
+                <span class="score-left">
+                    <p>P1 SCORE</p>
+                    <p class="score">{{p1Score}}</p>
+                    
+                </span>
+                <span class="score-right">
+                    <p>P2 SCORE</p>
+                    <p class="score">{{p2Score}}</p>
+                </span>
+            </mat-toolbar>
+            <mat-toolbar class="game-toolbar">
+                <span class="instruction2">
+                <span class="instruction-left">
+                    <p><span class="score">Z:</span> Move Left <span class="score">C:</span> Move Right <span class="score">Q:</span> Shoot
+                </span>
+                </span>
+                <span class="instruction2">
+                <span class="instruction-right">
+                    <p><span class="score">Left:</span> Move Left <span class="score">Right:</span> Move Right <span class="score">P:</span> Shoot
+                </span>
+            </span>
+            </mat-toolbar>
+            <canvas #game id="canvas_1" width="1080" height="492" style="border: 1px solid black">
+                <!--<img class="invader" *ngFor="let invader of Enemies_1" src="../../assets/img/invader.png" height="30px" width="30px">-->
+            </canvas>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <app-chat></app-chat>
+    </mat-grid-tile>
+</mat-grid-list>

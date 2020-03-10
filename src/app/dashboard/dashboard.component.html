@@ -1,0 +1,40 @@
+<mat-grid-list cols="2" rowHeight="500px">
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <div class="table">
+            <h3>TOP SCORES</h3>
+            <table mat-table [dataSource]="topScoresDataSource" class="mat-elevation-z8">
+                <!-- Player Column -->
+                <ng-container matColumnDef="player">
+                    <th mat-header-cell *matHeaderCellDef> Player </th>
+                    <td mat-cell *matCellDef="let row"> {{row.username}} </td>
+                </ng-container>
+                <!-- Score Column -->
+                <ng-container matColumnDef="score">
+                    <th mat-header-cell *matHeaderCellDef> Score </th>
+                    <td mat-cell *matCellDef="let row"> {{row.topScore}} </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="topScoresColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: topScoresColumns;"></tr>
+            </table>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <div class="table">
+            <h3>TOP PLAYERS</h3>
+            <table mat-table [dataSource]="topUsersDataSource" class="mat-elevation-z8">
+                <!-- Player Column -->
+                <ng-container matColumnDef="player">
+                    <th mat-header-cell *matHeaderCellDef> Player </th>
+                    <td mat-cell *matCellDef="let row"> {{row.username}} </td>
+                </ng-container>
+                <!-- Score Column -->
+                <ng-container matColumnDef="numWins">
+                    <th mat-header-cell *matHeaderCellDef> # Wins </th>
+                    <td mat-cell *matCellDef="let row"> {{row.numWins}} </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="topUsersColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: topUsersColumns;"></tr>
+            </table>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>

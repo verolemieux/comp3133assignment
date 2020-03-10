@@ -1,0 +1,117 @@
+.buttons {
+    text-align: center;
+    margin-top: 5px;
+}
+
+canvas {
+    background-color: black;
+}
+
+button {
+    margin: 1.5px
+}
+
+.game-tile {
+    padding: 20px 10px 10px 10px;
+}
+
+.game-tile, .chat-tile {
+    position: absolute;
+    top: 0;
+}
+
+mat-grid-list {
+    width: 97%;
+}
+
+.chat-tile {
+    background-color: #119822;
+    padding: 0px;
+    margin-top: 20px;
+    width: 300px;
+    height: 532px;
+}
+
+.chat-toolbar, .game-toolbar, .time-bar {
+    font-size: 20px;
+    text-align: center;
+    height: 40px;
+    font-family: 'Coda Caption', sans-serif;
+}
+
+.time-bar {
+    width: 40%;
+    margin: 10px auto;
+    justify-content: center;
+}
+
+.game-toolbar{
+    justify-content: space-between;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+#leaveGame {
+    height: 50%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+    align-items: center;
+}
+
+.score, .time{
+    color: red;
+}
+
+.score-left p, .score-right p {
+    display: inline;
+}
+
+span {
+    display: inline-block;
+}
+
+.score-left, .score-right, .instrution-left, .instrution-right {
+    display: inline-block;
+    margin: 0px;
+}
+
+.score-right, .instrution-right {
+    float: right;
+}
+
+.score-left, .instrution-left {
+    float: left;
+}
+.instruction2{
+    font-size: 18px;
+    font-family: fantasy;
+}
+.instrution{
+    color:red;
+}
+
+.invader-img{
+    height: 2px;
+    width:2px;
+}
+
+.spacecraft{
+    position: absolute;
+    -webkit-transition: all 3.5s ease-in-out;
+    -moz-transition: all 3.5s ease-in-out;
+    -ms-transition: all 3.5s ease-in-out;
+    -o-transition: all 3.5s ease-in-out;
+    transition: all 3.5s ease-in-out;
+}
+.laser{
+    width:20px;
+    height:20px;
+    position:relative;
+}

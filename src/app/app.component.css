@@ -1,0 +1,42 @@
+mat-toolbar {
+    background-color: #119822;
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    font-family: 'Coda Caption', sans-serif;
+    font-size: 35px;
+}
+
+.mat-form-field-flex {
+    flex: 0 1 auto;
+    font-size: 15px;
+    height: 20px;
+    margin: 0;
+}
+
+::ng-deep .mat-form-field-wrapper {
+    padding: 0;
+}
+
+mat-form-field {
+    font-size: 15px;
+    /* color: white; */
+    /* padding: 5px; */
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-flex {
+    margin: 0;
+}
+
+.username-button {
+    vertical-align: middle;
+    height: 64px;
+}
+
+button {
+    vertical-align: middle;
+    margin-left: 5px;
+    /* height: 64px; */
+}

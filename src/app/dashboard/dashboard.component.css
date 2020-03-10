@@ -1,0 +1,15 @@
+table {
+    width: 100%;
+}
+
+.table {
+    position: absolute;
+    top: 0;
+    width: 99%;
+    font-size: 18px;
+}
+
+h3 {
+    font-family: 'Coda Caption', sans-serif;
+    font-size: 25px;
+}

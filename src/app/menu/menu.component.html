@@ -1,0 +1,132 @@
+<div class="buttons">
+    <button mat-raised-button (click)="openDashboard()">Dashboard</button>
+    <span>
+        <span class="username-button">
+            <mat-form-field appearance="outline">
+                <mat-label>USERNAME</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <!--<button color="primary" mat-raised-button [routerLink]="['/playgame']">Play Game</button>-->
+            <button color="primary" id="playGame" mat-raised-button (click)="playGame()">Play Game</button>
+            {{msg}}
+        </span>
+    </span>
+    <span>
+        <button mat-raised-button (click)="getChatHistory()">Chat History</button>
+        <button mat-raised-button (click)="getEventLog()">Event Log</button>
+        <button mat-raised-button (click)="getGameHistory()">Game History</button>
+    </span>
+</div>
+<div class="dashboard">
+    <app-dashboard *ngIf="showDashboard"></app-dashboard>
+</div>
+<div [style.display]="showHistory ? 'block' : 'none'" class="table">
+    <h3>CHAT HISTORY</h3>
+    <table mat-table [dataSource]="historyDataSource" class="mat-elevation-z8">
+        <!-- Player Column -->
+        <ng-container matColumnDef="player">
+        <th mat-header-cell *matHeaderCellDef> Player </th>
+        <td mat-cell *matCellDef="let row"> {{row.player}} </td>
+        </ng-container>
+    
+        <!-- Opponent Column -->
+        <ng-container matColumnDef="opponent">
+        <th mat-header-cell *matHeaderCellDef> Opponent </th>
+        <td mat-cell *matCellDef="let row"> {{row.opponent}} </td>
+        </ng-container>
+    
+        <!-- Date Column -->
+        <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Date </th>
+        <td mat-cell *matCellDef="let row"> {{row.date}} </td>
+        </ng-container>
+    
+        <!-- Time Column -->
+        <ng-container matColumnDef="time">
+        <th mat-header-cell *matHeaderCellDef> Time </th>
+        <td mat-cell *matCellDef="let row"> {{row.time}} </td>
+        </ng-container>
+
+        <!-- Message Column -->
+        <ng-container matColumnDef="message">
+            <th mat-header-cell *matHeaderCellDef> Message </th>
+            <td mat-cell *matCellDef="let row"> {{row.message}} </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="historyColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: historyColumns;"></tr>
+    </table>
+    <mat-paginator #historyPaginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+
+<div [style.display]="showEvents ? 'block' : 'none'" class="table">
+    <h3>EVENT LOG</h3>
+    <table mat-table [dataSource]="eventDataSource" class="mat-elevation-z8">
+        <!-- Type Column -->
+        <ng-container matColumnDef="type">
+            <th mat-header-cell *matHeaderCellDef> Type </th>
+            <td mat-cell *matCellDef="let row"> {{row.type}} </td>
+        </ng-container>
+
+        <!-- Date Column -->
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef> Date </th>
+            <td mat-cell *matCellDef="let row"> {{row.date}} </td>
+        </ng-container>
+
+        <!-- Time Column -->
+        <ng-container matColumnDef="time">
+            <th mat-header-cell *matHeaderCellDef> Time </th>
+            <td mat-cell *matCellDef="let row"> {{row.time}} </td>
+        </ng-container>
+
+        <!-- User Column -->
+        <ng-container matColumnDef="user">
+            <th mat-header-cell *matHeaderCellDef> User </th>
+            <td mat-cell *matCellDef="let row"> {{row.user}} </td>
+            </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="eventColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: eventColumns;"></tr>
+    </table>
+    <mat-paginator #eventPaginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+
+<div [style.display]="showGames ? 'block' : 'none'" class="table">
+    <h3>GAME HISTORY</h3>
+    <table mat-table [dataSource]="gameDataSource" class="mat-elevation-z8">
+        <!-- Player 1 Column -->
+        <ng-container matColumnDef="player1">
+            <th mat-header-cell *matHeaderCellDef> Player 1 </th>
+            <td mat-cell *matCellDef="let row"> {{row.player1}} </td>
+        </ng-container>
+
+        <!-- Player 2 Column -->
+        <ng-container matColumnDef="player2">
+            <th mat-header-cell *matHeaderCellDef> Player 2 </th>
+            <td mat-cell *matCellDef="let row"> {{row.player2}} </td>
+        </ng-container>
+
+        <!-- Winner Column -->
+        <ng-container matColumnDef="winner">
+            <th mat-header-cell *matHeaderCellDef> Winner </th>
+            <td mat-cell *matCellDef="let row"> {{row.winner}} </td>
+        </ng-container>
+
+        <!-- Score Player 1 Column -->
+        <ng-container matColumnDef="scorePlayer1">
+            <th mat-header-cell *matHeaderCellDef> Score Player 1 </th>
+            <td mat-cell *matCellDef="let row"> {{row.scorePlayer1}} </td>
+        </ng-container>
+
+        <!-- Score Player 2 Column -->
+        <ng-container matColumnDef="scorePlayer2">
+            <th mat-header-cell *matHeaderCellDef> Score Player 2 </th>
+            <td mat-cell *matCellDef="let row"> {{row.scorePlayer2}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="gameColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: gameColumns;"></tr>
+    </table>
+    <mat-paginator #eventPaginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
