@@ -55,8 +55,8 @@ button {
 #room {
     overflow-y: auto;
     height: 480px;
-    display: flex;
-    flex-direction: column-reverse;
+    display: table-cell;
+    vertical-align: bottom;
 }
 
 #message {
