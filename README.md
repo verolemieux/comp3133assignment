@@ -4,6 +4,13 @@
 ## Jeremy Thibeau 101157911
 ## Sergio Lombana 101137768
 
+## Instructions to play game:
+
+## Click "play game" in order to join in. A maximum of two connections to the server can exist, so if you try to connect more than
+## once it will prevent you from joining the game. If two people are in the game and nothing appears, you will need to leave and go
+## back in. Press the respective controls for the left / right player in the game. Avoid the alien lasers to not have your ship
+## destroyed!
+
 ## --------------------------------------------------------------------------------------
 
 # Client
