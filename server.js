@@ -107,6 +107,14 @@ function handleError(res, reason, message, code) {
   res.status(code || 500).json({ error: message });
 }
 
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname, 'src/index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
+
 /*** SOCKETS ***/
 var io = require("socket.io")(server);
 
