@@ -143,6 +143,17 @@ var oldposy;
 //GET POSITION FROM HERE THIS FILE
 
 io.on("connection", socket => {
+
+  socket.on('set_username', (data) => {
+    console.log("set_username in server.js: "+data);
+    socket.username = data;
+    console.log("socket.ussername: "+socket.username);
+    users.push(data);
+    io.emit('store_user',{user:data,id:users.length});
+    //updateUsernames();
+    //io.sockets.emit('set_user',data);
+    //socket.emit('userSet',{username:data});
+    })
   /*** GENERAL ***/
   // default username
   socket.username = "Anonymous";
