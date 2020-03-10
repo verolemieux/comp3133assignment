@@ -107,8 +107,8 @@ function handleError(res, reason, message, code) {
   res.status(code || 500).json({ error: message });
 }
 
-app.get('*', function(req, res) {
-  res.sendFile('./src/index.html')
+app.get('/*', function(req, res) {
+  res.sendFile(__dirname + '/dist/index.html')
 })
 
 /*** SOCKETS ***/
