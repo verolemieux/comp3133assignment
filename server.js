@@ -29,7 +29,11 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
-app.use("/", express.static(path.join(__dirname, "mean_stack_game")));
+// app.use("/", express.static(path.join(__dirname, "mean_stack_game")));
+
+
+var distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
 
 // create port
 const port = process.env.PORT || 3000;
