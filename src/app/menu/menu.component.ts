@@ -45,7 +45,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
     this.showDashboard = true;
-    this.socket = io("http://localhost:3000");
+    this.socket = io();
     this.socket.emit("checkNumPlayers")
   }
 

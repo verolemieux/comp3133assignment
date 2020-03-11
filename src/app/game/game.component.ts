@@ -165,7 +165,7 @@ export class GameComponent implements OnInit {
     }*/
 
   public ngOnInit() {
-    this.socket = io("http://localhost:3000");
+    this.socket = io();
 
     this.socket.emit("checkPlayers");
 
