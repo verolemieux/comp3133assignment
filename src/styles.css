@@ -36,7 +36,6 @@ button {
     width: 300px;
     height: 558px;
     left: 0;
-    /* position: relative; */
 }
 
 .chat-toolbar, .game-toolbar {
@@ -55,8 +54,15 @@ button {
 #room {
     overflow-y: auto;
     height: 480px;
-    display: table-cell;
-    vertical-align: bottom;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    position: fixed;
+    bottom: auto;
+}
+
+#room p {
+    height: fit-content;
 }
 
 #message {
